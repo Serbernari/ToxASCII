@@ -1,0 +1,11 @@
+
+Testing Llama32:
+              precision    recall  f1-score   support
+
+       False       0.50      0.69      0.58      6725
+        True       0.50      0.31      0.38      6725
+
+    accuracy                           0.50     13450
+   macro avg       0.50      0.50      0.48     13450
+weighted avg       0.50      0.50      0.48     13450
+
