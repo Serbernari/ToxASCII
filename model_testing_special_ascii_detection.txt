@@ -1,0 +1,55 @@
+
+Testing Llama32:
+              precision    recall  f1-score   support
+
+       False       0.91      0.80      0.85       225
+        True       0.15      0.32      0.20        25
+
+    accuracy                           0.75       250
+   macro avg       0.53      0.56      0.53       250
+weighted avg       0.84      0.75      0.79       250
+
+
+Testing Llama31:
+              precision    recall  f1-score   support
+
+       False       0.97      0.83      0.89       225
+        True       0.33      0.76      0.46        25
+
+    accuracy                           0.82       250
+   macro avg       0.65      0.79      0.67       250
+weighted avg       0.90      0.82      0.85       250
+
+
+Testing Phi3:
+              precision    recall  f1-score   support
+
+       False       0.99      1.00      1.00       225
+        True       1.00      0.92      0.96        25
+
+    accuracy                           0.99       250
+   macro avg       1.00      0.96      0.98       250
+weighted avg       0.99      0.99      0.99       250
+
+
+Testing Gemma2:
+              precision    recall  f1-score   support
+
+       False       1.00      1.00      1.00       225
+        True       1.00      1.00      1.00        25
+
+    accuracy                           1.00       250
+   macro avg       1.00      1.00      1.00       250
+weighted avg       1.00      1.00      1.00       250
+
+
+Testing Mistral:
+              precision    recall  f1-score   support
+
+       False       0.90      1.00      0.95       225
+        True       0.00      0.00      0.00        25
+
+    accuracy                           0.90       250
+   macro avg       0.45      0.50      0.47       250
+weighted avg       0.81      0.90      0.85       250
+
