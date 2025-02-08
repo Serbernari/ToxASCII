@@ -5,3 +5,7 @@ Testing Llama31:
 Accuracy:0.0
 Testing Phi3:
 Accuracy:0.0
+Testing Gemma2:
+Accuracy:0.0
+Testing Mistral:
+Accuracy:0.0

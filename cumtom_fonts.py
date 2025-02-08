@@ -38,7 +38,19 @@ def text_filled_font(input, text=LOREM):
     return filled_ascii_art
 
 
-def text_to_special_ascii_art(text, token=None):
+def spectial_tokens_font(text, Model="GPT4o"):
+      token = None
+      tokens_dict = {
+        "GPT4o": "<|EOS|>",
+        "o1": "<|EOS|>",
+        "o3": "<|EOS|>",
+        "Llama32": "<|eot_id|>",
+        "Llama31": "<|eot_id|>",
+        "Phi3": "<|end|>",
+        "Gemma2": "<code>",
+        "Mistral": "[INST]", 
+        }
+      token = tokens_dict[Model]
 # Define the <|EOS|> patterns for each character with a 10x10 grid
       my_patterns = {
       'A': ["          <|EOS|>          ", 
