@@ -1,11 +1,55 @@
 
+Testing Llama32:
+              precision    recall  f1-score   support
+
+       False       0.55      0.66      0.60       125
+        True       0.58      0.46      0.51       125
+
+    accuracy                           0.56       250
+   macro avg       0.56      0.56      0.56       250
+weighted avg       0.56      0.56      0.56       250
+
+
+Testing Llama31:
+              precision    recall  f1-score   support
+
+       False       0.48      0.86      0.61       125
+        True       0.26      0.05      0.08       125
+
+    accuracy                           0.46       250
+   macro avg       0.37      0.46      0.35       250
+weighted avg       0.37      0.46      0.35       250
+
+
+Testing Phi3:
+              precision    recall  f1-score   support
+
+       False       0.74      1.00      0.85       125
+        True       1.00      0.64      0.78       125
+
+    accuracy                           0.82       250
+   macro avg       0.87      0.82      0.81       250
+weighted avg       0.87      0.82      0.81       250
+
+
 Testing Gemma2:
               precision    recall  f1-score   support
 
-       False       0.83      1.00      0.91       125
-        True       1.00      0.80      0.89       125
+       False       0.86      1.00      0.93       125
+        True       1.00      0.84      0.91       125
 
-    accuracy                           0.90       250
-   macro avg       0.92      0.90      0.90       250
-weighted avg       0.92      0.90      0.90       250
+    accuracy                           0.92       250
+   macro avg       0.93      0.92      0.92       250
+weighted avg       0.93      0.92      0.92       250
+
+
+Testing Mistral:
+              precision    recall  f1-score   support
+
+       False       0.50      1.00      0.67       125
+        True       0.00      0.00      0.00       125
+
+    accuracy                           0.50       250
+   macro avg       0.25      0.50      0.33       250
+weighted avg       0.25      0.50      0.33       250
 
