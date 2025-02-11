@@ -1,0 +1,132 @@
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.67      0.96      0.79       125
+        True       0.93      0.54      0.68       125
+
+    accuracy                           0.75       250
+   macro avg       0.80      0.75      0.74       250
+weighted avg       0.80      0.75      0.74       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       1.00      0.95      0.98       125
+        True       0.95      1.00      0.98       125
+
+    accuracy                           0.98       250
+   macro avg       0.98      0.98      0.98       250
+weighted avg       0.98      0.98      0.98       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.72      0.95      0.82       125
+        True       0.93      0.63      0.75       125
+
+    accuracy                           0.79       250
+   macro avg       0.83      0.79      0.79       250
+weighted avg       0.83      0.79      0.79       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.49      0.94      0.65       125
+        True       0.38      0.04      0.07       125
+
+    accuracy                           0.49       250
+   macro avg       0.44      0.49      0.36       250
+weighted avg       0.44      0.49      0.36       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.87      0.94      0.90       125
+        True       0.93      0.86      0.90       125
+
+    accuracy                           0.90       250
+   macro avg       0.90      0.90      0.90       250
+weighted avg       0.90      0.90      0.90       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.67      0.96      0.79       125
+        True       0.93      0.52      0.67       125
+
+    accuracy                           0.74       250
+   macro avg       0.80      0.74      0.73       250
+weighted avg       0.80      0.74      0.73       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.49      0.94      0.65       125
+        True       0.30      0.02      0.04       125
+
+    accuracy                           0.48       250
+   macro avg       0.40      0.48      0.35       250
+weighted avg       0.40      0.48      0.35       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.50      0.95      0.66       125
+        True       0.57      0.06      0.12       125
+
+    accuracy                           0.51       250
+   macro avg       0.54      0.51      0.39       250
+weighted avg       0.54      0.51      0.39       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.53      0.94      0.68       125
+        True       0.74      0.16      0.26       125
+
+    accuracy                           0.55       250
+   macro avg       0.63      0.55      0.47       250
+weighted avg       0.63      0.55      0.47       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.56      0.95      0.70       125
+        True       0.83      0.24      0.37       125
+
+    accuracy                           0.60       250
+   macro avg       0.69      0.60      0.54       250
+weighted avg       0.69      0.60      0.54       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.49      0.95      0.64       125
+        True       0.00      0.00      0.00       125
+
+    accuracy                           0.48       250
+   macro avg       0.24      0.48      0.32       250
+weighted avg       0.24      0.48      0.32       250
+
+
+Testing Llama33:
+              precision    recall  f1-score   support
+
+       False       0.51      0.94      0.66       125
+        True       0.65      0.10      0.18       125
+
+    accuracy                           0.52       250
+   macro avg       0.58      0.52      0.42       250
+weighted avg       0.58      0.52      0.42       250
+

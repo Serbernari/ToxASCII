@@ -38,7 +38,7 @@ def text_filled_font(input, text=LOREM):
     return filled_ascii_art
 
 
-def spectial_tokens_font(text, Model="GPT4o"):
+def spectial_tokens_font_model(text, Model="GPT4o"):
       token = None
       tokens_dict = {
         "GPT4o": "<|EOS|>",
@@ -51,6 +51,363 @@ def spectial_tokens_font(text, Model="GPT4o"):
         "Mistral": "[INST]", 
         }
       token = tokens_dict[Model]
+# Define the <|EOS|> patterns for each character with a 10x10 grid
+      my_patterns = {
+      'A': ["          <|EOS|>          ", 
+            "      <|EOS|><|EOS|>       ", 
+            "     <|EOS|>   <|EOS|>     ", 
+            "    <|EOS|>     <|EOS|>    ", 
+            "   <|EOS|>       <|EOS|>   ", 
+            "  <|EOS|><|EOS|><|EOS|>    ", 
+            " <|EOS|>           <|EOS|> ", 
+            "<|EOS|>             <|EOS|>", 
+            "<|EOS|>             <|EOS|>", 
+            "<|EOS|>             <|EOS|>"],
+
+
+      'B': ["<|EOS|><|EOS|><|EOS|>    ", 
+            "<|EOS|>           <|EOS|>", 
+            "<|EOS|>           <|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|><   ", 
+            "<|EOS|><|EOS|><|EOS|>    ", 
+            "<|EOS|>           <|EOS|>", 
+            "<|EOS|>           <|EOS|>", 
+            "<|EOS|>           <|EOS|>", 
+            "<|EOS|>           <|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>    "],
+
+
+      'C': ["   <|EOS|><|EOS|><|EOS|>    ", 
+            "  <|EOS|>            <|EOS|>", 
+            " <|EOS|>             <|EOS|>", 
+            "<|EOS|>                     ", 
+            "<|EOS|>                     ", 
+            "<|EOS|>                     ", 
+            "<|EOS|>                     ", 
+            "<|EOS|>              <|EOS|>", 
+            "  <|EOS|>            <|EOS|>", 
+            "   <|EOS|><|EOS|><|EOS|>    "],
+
+
+      'D': ["<|EOS|><|EOS|><|EOS|>     ", 
+            "<|EOS|>           <|EOS|> ", 
+            "<|EOS|>            <|EOS|>", 
+            "<|EOS|>            <|EOS|>", 
+            "<|EOS|>            <|EOS|>", 
+            "<|EOS|>            <|EOS|>", 
+            "<|EOS|>            <|EOS|>", 
+            "<|EOS|>           <|EOS|> ", 
+            "<|EOS|>           <|EOS|> ", 
+            "<|EOS|><|EOS|><|EOS|>     "],
+
+
+      'E': ["<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>"],
+
+
+      'F': ["<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|>              "],
+
+
+      'G': ["   <|EOS|><|EOS|><|EOS|>    ", 
+            "  <|EOS|>           <|EOS|> ", 
+            " <|EOS|>             <|EOS|>", 
+            "<|EOS|>                     ", 
+            "<|EOS|>                     ",
+            "<|EOS|>       <|EOS|><|EOS|>", 
+            "<|EOS|>              <|EOS|>", 
+            " <|EOS|>             <|EOS|>", 
+            "  <|EOS|>            <|EOS|>", 
+            "   <|EOS|><|EOS|><|EOS|>    "],
+
+
+      'H': ["<|EOS|>              <|EOS|>", 
+            "<|EOS|>              <|EOS|>", 
+            "<|EOS|>              <|EOS|>", 
+            "<|EOS|>              <|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|>              <|EOS|>", 
+            "<|EOS|>              <|EOS|>", 
+            "<|EOS|>              <|EOS|>", 
+            "<|EOS|>              <|EOS|>"],
+
+
+      'I': ["<|EOS|><|EOS|>", 
+            "   <|EOS|>    ", 
+            "   <|EOS|>    ", 
+            "   <|EOS|>    ", 
+            "   <|EOS|>    ", 
+            "   <|EOS|>    ", 
+            "   <|EOS|>    ", 
+            "   <|EOS|>    ", 
+            "   <|EOS|>    ", 
+            "<|EOS|><|EOS|>"],
+
+
+      'J': ["       <|EOS|><|EOS|>", 
+            "              <|EOS|>", 
+            "              <|EOS|>", 
+            "              <|EOS|>", 
+            "              <|EOS|>", 
+            "              <|EOS|>", 
+            "              <|EOS|>", 
+            "<|EOS|>       <|EOS|>", 
+            " <|EOS|>     <|EOS|> ", 
+            "  <|EOS|><|EOS|>     "],
+
+
+      'K': ["<|EOS|>          <|EOS|>", 
+            "<|EOS|>         <|EOS|> ", 
+            "<|EOS|>       <|EOS|>   ", 
+            "<|EOS|>     <|EOS|>     ", 
+            "<|EOS|><|EOS|>          ", 
+            "<|EOS|><|EOS|>          ", 
+            "<|EOS|>     <|EOS|>     ", 
+            "<|EOS|>       <|EOS|>   ", 
+            "<|EOS|>         <|EOS|> ", 
+            "<|EOS|>          <|EOS|>"],
+
+            
+      'L': ["<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|>              ", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>"],
+
+
+      'M': ["<|EOS|>                   <|EOS|>", 
+            "<|EOS|><|EOS|>     <|EOS|><|EOS|>", 
+            "<|EOS|>   <|EOS|><|EOS|>  <|EOS|>", 
+            "<|EOS|>       <|EOS|>     <|EOS|>", 
+            "<|EOS|>       <|EOS|>     <|EOS|>", 
+            "<|EOS|>                   <|EOS|>", 
+            "<|EOS|>                   <|EOS|>", 
+            "<|EOS|>                   <|EOS|>", 
+            "<|EOS|>                   <|EOS|>", 
+            "<|EOS|>                   <|EOS|>"],
+
+
+      'N': ["<|EOS|>               <|EOS|>", 
+            "<|EOS|><|EOS|>        <|EOS|>", 
+            "<|EOS|>   <|EOS|>     <|EOS|>", 
+            "<|EOS|>     <|EOS|>   <|EOS|>", 
+            "<|EOS|>      <|EOS|>  <|EOS|>", 
+            "<|EOS|>       <|EOS|> <|EOS|>", 
+            "<|EOS|>        <|EOS|><|EOS|>", 
+            "<|EOS|>               <|EOS|>", 
+            "<|EOS|>               <|EOS|>", 
+            "<|EOS|>               <|EOS|>"],
+
+
+      'O': ["   <|EOS|><|EOS|>     ", 
+            " <|EOS|>      <|EOS|> ", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            " <|EOS|>      <|EOS|> ", 
+            "   <|EOS|><|EOS|>     "],
+
+
+      'P': ["<|EOS|><|EOS|><|EOS|>  ", 
+            "<|EOS|>         <|EOS|>", 
+            "<|EOS|>         <|EOS|>", 
+            "<|EOS|>         <|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>  ", 
+            "<|EOS|>                ", 
+            "<|EOS|>                ", 
+            "<|EOS|>                ", 
+            "<|EOS|>                ", 
+            "<|EOS|>                  "],
+
+      'Q': ["  <|EOS|><|EOS|><|EOS|>   ", 
+            " <|EOS|>         <|EOS|>  ", 
+            "<|EOS|>           <|EOS|> ", 
+            "<|EOS|>           <|EOS|> ", 
+            "<|EOS|>           <|EOS|> ", 
+            "<|EOS|>           <|EOS|> ", 
+            "<|EOS|>           <|EOS|> ", 
+            "<|EOS|>      <|EOS|>      ", 
+            " <|EOS|>      <|EOS|>     ", 
+            "   <|EOS|><|EOS|><|EOS|>  ",
+            "                   <|EOS|>"],
+
+
+      'R': ["<|EOS|><|EOS|><|EOS|>    ", 
+            "<|EOS|>          <|EOS|> ", 
+            "<|EOS|>          <|EOS|> ", 
+            "<|EOS|>          <|EOS|> ", 
+            "<|EOS|><|EOS|><|EOS|>    ", 
+            "<|EOS|>     <|EOS|>      ", 
+            "<|EOS|>      <|EOS|>     ", 
+            "<|EOS|>       <|EOS|>    ", 
+            "<|EOS|>        <|EOS|>   ", 
+            "<|EOS|>         <|EOS|>  "],
+
+
+      'S': ["   <|EOS|><|EOS|><|EOS|>   ", 
+            "  <|EOS|>          <|EOS|> ", 
+            " <|EOS|>                   ", 
+            "<|EOS|>                    ", 
+            "  <|EOS|><|EOS|><|EOS|>    ", 
+            "                    <|EOS|>", 
+            "                    <|EOS|>", 
+            "                   <|EOS|> ", 
+            "  <|EOS|>          <|EOS|> ", 
+            "   <|EOS|><|EOS|><|EOS|>   "],
+
+
+      'T': ["<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "       <|EOS|>       ", 
+            "       <|EOS|>       ", 
+            "       <|EOS|>       ", 
+            "       <|EOS|>       ", 
+            "       <|EOS|>       ", 
+            "       <|EOS|>       ", 
+            "       <|EOS|>       ", 
+            "       <|EOS|>       "],
+
+
+      'U': ["<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            "<|EOS|>        <|EOS|>", 
+            " <|EOS|>     <|EOS|> ", 
+            "   <|EOS|><|EOS|>   "],
+
+
+      'V': ["<|EOS|>             <|EOS|>", 
+            " <|EOS|>           <|EOS|> ", 
+            " <|EOS|>           <|EOS|> ", 
+            "  <|EOS|>         <|EOS|>  ", 
+            "  <|EOS|>         <|EOS|>  ", 
+            "   <|EOS|>       <|EOS|>   ", 
+            "   <|EOS|>       <|EOS|>   ", 
+            "    <|EOS|>     <|EOS|>    ", 
+            "     <|EOS|>   <|EOS|>     ", 
+            "      <|EOS|><|EOS|>       "],
+
+
+      'W': ["<|EOS|>         <|EOS|><|EOS|>         <|EOS|>", 
+            " <|EOS|>       <|EOS|>  <|EOS|>       <|EOS|> ", 
+            " <|EOS|>       <|EOS|>  <|EOS|>       <|EOS|> ", 
+            "  <|EOS|>     <|EOS|>    <|EOS|>     <|EOS|>  ", 
+            "  <|EOS|>     <|EOS|>    <|EOS|>     <|EOS|>  ", 
+            "   <|EOS|>   <|EOS|>      <|EOS|>   <|EOS|>   ", 
+            "   <|EOS|>   <|EOS|>      <|EOS|>   <|EOS|>   ", 
+            "    <|EOS|> <|EOS|>        <|EOS|> <|EOS|>    ", 
+            "    <|EOS|><|EOS|>          <|EOS|><|EOS|>    ", 
+            "        <|EOS|>                <|EOS|>        "],
+
+
+      'X': ["<|EOS|>         <|EOS|>", 
+            " <|EOS|>       <|EOS|> ", 
+            "  <|EOS|>     <|EOS|>  ", 
+            "   <|EOS|>   <|EOS|>   ", 
+            "    <|EOS|><|EOS|>     ", 
+            "    <|EOS|><|EOS|>     ", 
+            "   <|EOS|>   <|EOS|>   ", 
+            "  <|EOS|>     <|EOS|>  ", 
+            " <|EOS|>       <|EOS|> ", 
+            "<|EOS|>         <|EOS|>"],
+
+
+      'Y': ["<|EOS|>           <|EOS|>", 
+            " <|EOS|>         <|EOS|> ", 
+            "  <|EOS|>       <|EOS|>  ", 
+            "   <|EOS|>     <|EOS|>   ", 
+            "    <|EOS|>    <|EOS|>   ", 
+            "     <|EOS|><|EOS|>      ", 
+            "         <|EOS|>         ", 
+            "         <|EOS|>         ", 
+            "         <|EOS|>         ", 
+            "         <|EOS|>         "],
+
+
+      'Z': ["<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "             <|EOS|> ", 
+            "           <|EOS|>   ", 
+            "         <|EOS|>     ", 
+            "       <|EOS|>       ", 
+            "     <|EOS|>         ", 
+            "   <|EOS|>           ", 
+            "<|EOS|><|EOS|><|EOS|>", 
+            "<|EOS|><|EOS|><|EOS|>"],
+      
+      
+      '_': ["  ", 
+            "  ", 
+            "  ", 
+            "  ", 
+            "  ", 
+            "  ", 
+            "  ", 
+            "  ", 
+            "  ", 
+            "  "]
+      }
+
+      # Default pattern for unknown characters
+      default_pattern = ["               ", 
+                        "                ", 
+                        "                ", 
+                        "                ", 
+                        "                ", 
+                        "                ", 
+                        "                ", 
+                        "                ", 
+                        "                ", 
+                        "                "]
+
+    # Create a list to hold the lines of the output
+      output_lines = ["", "", "", "", "", "", "", "", "", ""]
+
+      # Convert each character in the text to its <|EOS|> pattern
+      for char in text.upper():
+            pattern = my_patterns.get(char, default_pattern)
+            for i in range(10):
+                  output_lines[i] += pattern[i] + " "  # Add space between characters
+
+      # Join the lines with newline characters
+      output = "\n".join(output_lines)
+
+      if token is None:
+           return output
+      else:
+           return output.replace("<|EOS|>", token)
+
+def spectial_tokens_font(text, token="<|EOS|>"):
+
 # Define the <|EOS|> patterns for each character with a 10x10 grid
       my_patterns = {
       'A': ["          <|EOS|>          ", 

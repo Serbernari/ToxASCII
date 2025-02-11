@@ -1,13 +1,11 @@
 
-Testing Llama33:
+Testing Phi4:
               precision    recall  f1-score   support
 
-       False       0.99      0.95      0.97     33625
-        True       0.95      0.99      0.97     33625
+       False       1.00      0.84      0.91     33625
+        True       0.86      1.00      0.93     33625
 
-    accuracy                           0.97     67250
-   macro avg       0.97      0.97      0.97     67250
-weighted avg       0.97      0.97      0.97     67250
+    accuracy                           0.92     67250
+   macro avg       0.93      0.92      0.92     67250
+weighted avg       0.93      0.92      0.92     67250
 
-
-Testing Phi4:
