@@ -41,14 +41,16 @@ def text_filled_font(input, text=LOREM):
 def spectial_tokens_font_model(text, Model="GPT4o"):
       token = None
       tokens_dict = {
-        "GPT4o": "<|EOS|>",
+        "GPT4o": "<unk>",
         "o1": "<|EOS|>",
-        "o3": "<|EOS|>",
-        "Llama32": "<|eot_id|>",
-        "Llama31": "<|eot_id|>",
+        "o3": "<|im_end|>",
+        "Llama33": "<eos>",
+        "Llama32": "<|end|>",
+        "Llama31": "</code>",
         "Phi3": "<|end|>",
-        "Gemma2": "<code>",
-        "Mistral": "[INST]", 
+        "Phi4": "<|eot_id|>",
+        "Gemma2": "<bos>",
+        "Mistral": "<|EOS|>", 
         }
       token = tokens_dict[Model]
 # Define the <|EOS|> patterns for each character with a 10x10 grid
